@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Guía visual para estudiar las opciones comunitarias de Mini Fighter Online en local: remake Python y emulador Season 3." name="description"/>
+<title>Mini Fighter // Local Lab</title>
+<meta name="theme-color" content="#050a13"/>
+<link rel="stylesheet" href="assets/css/styles.css?v=1.0.0"/>
+</head>
+<body>
+<a class="skip-link" href="#inicio">Saltar al contenido</a>
+<nav class="hud-nav">
+<div class="wrap nav-inner">
+<a class="brand" href="#inicio">
+<div class="brand-mark">MF</div>
+<div><strong>LOCAL LAB</strong><small>MINI FIGHTER RESEARCH</small></div>
+</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Abrir menú de navegación"><span></span></button>
+<div class="nav-links" id="main-navigation">
+<a href="#historia">Historia</a><a href="#sistemas">Sistemas</a><a href="#archivo">Archivo</a><a href="#laboratorio">Laboratorio</a><a href="#fuentes">Fuentes</a>
+<a class="nav-cta" href="#estado">Estado actual</a>
+</div>
+</div>
+</nav>
+<main id="inicio">
+<section class="hero">
+<div class="wrap hero-grid">
+<div>
+<div class="eyebrow">Investigación comunitaria · edición local</div>
+<h1><span class="mini">Mini Fighter Online</span>Local Lab</h1>
+<p class="hero-copy">
+            Un archivo interactivo de preservación para comprender la historia, los sistemas y los recursos técnicos de Mini Fighter Online, además de comparar el remake abierto en Python con el emulador Season 3. El laboratorio mantiene todas las pruebas en <strong>localhost</strong>.
+          </p>
+<div class="hero-actions">
+<a class="btn primary" href="#rutas">⚡ Comparar rutas</a>
+<a class="btn ghost" href="#laboratorio">⌨ Ver instalación</a>
+</div>
+<div class="hero-badges">
+<span class="badge">Python 3.12</span><span class="badge">Arcade 3.3.3</span>
+<span class="badge">C# + MySQL/MariaDB</span><span class="badge">Archivo multilingüe</span><span class="badge">127.0.0.1</span>
+</div>
+</div>
+<div aria-label="Ilustración temática de dos luchadores" class="arena">
+<div class="versus">
+<span class="energy e1"></span><span class="energy e2"></span><span class="energy e3"></span>
+<article class="fighter-card blue">
+<div class="portrait"></div>
+<div class="card-label">RUTA 01 · OPEN SOURCE</div>
+<div class="card-name">Python Remake</div>
+<div class="stat-row"><i class="stat on"></i><i class="stat on"></i><i class="stat on"></i><i class="stat on"></i><i class="stat"></i></div>
+</article>
+<div class="vs">VS</div>
+<article class="fighter-card red">
+<div class="portrait"></div>
+<div class="card-label">RUTA 02 · CLASSIC CLIENT</div>
+<div class="card-name">Season 3</div>
+<div class="stat-row"><i class="stat on"></i><i class="stat on"></i><i class="stat on"></i><i class="stat"></i><i class="stat"></i></div>
+</article>
+<div aria-hidden="true" class="skillbar">
+<span class="slot active">Q</span><span class="slot">W</span><span class="slot">E</span><span class="slot active">R</span><span class="slot">1</span><span class="slot">2</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section status-strip" id="estado">
+<div class="wrap">
+<header class="section-head reveal">
+<div><div class="kicker">Radar comunitario</div><h2>Estado actual</h2></div>
+<p>Resumen de lo que puede verificarse públicamente. “Disponible” no significa completo ni seguro: cada paquete debe revisarse antes de ejecutarlo.</p>
+</header>
+<div class="status-grid">
+<article class="status-card panel reveal">
+<div class="status-line"><span class="status-label">Ruta 01</span><span class="status-pill">Código disponible</span></div>
+<h3>Python Remake</h3>
+<p>Cliente y servidor propios escritos en Python 3.12 con Arcade. El autor lo presenta como un proyecto en desarrollo y publica también AllInOneMFOToolbox.</p>
+<div class="status-meta"><span>Base SQL: no</span><span>Estado: WIP</span><span>Entrada: src/main.py</span><span>Servidor: server.py</span></div>
+<div class="verified-bar">Comprobado en el hilo comunitario el 24 de julio de 2026.</div>
+</article>
+<article class="status-card panel emu-status reveal">
+<div class="status-line"><span class="status-label">Ruta 02</span><span class="status-pill partial">Emulador parcial</span></div>
+<h3>Season 3</h3>
+<p>Emulador comunitario, no archivos oficiales del servidor. Utiliza cliente clásico, configuración INI y MySQL/MariaDB; las bases históricas fueron descritas como incompletas.</p>
+<div class="status-meta"><span>Base SQL: sí</span><span>Estado: parcial</span><span>Cliente clásico</span><span>VM recomendada</span></div>
+<div class="verified-bar">El alcance real debe comprobarse función por función y mediante logs.</div>
+</article>
+<article class="status-card panel archive-status reveal">
+<div class="status-line"><span class="status-label">Cobertura del archivo</span><span class="status-pill">4 idiomas</span></div>
+<h3>Preservación</h3>
+<p>La investigación cruza fuentes en español, inglés, coreano y chino tradicional para separar nombres regionales, sistemas oficiales y modificaciones comunitarias.</p>
+<div class="status-meta"><span>Corea: 미니파이터</span><span>Taiwán: 迷你格鬥</span><span>Latinoamérica</span><span>Comunidad técnica</span></div>
+<div class="verified-bar">Los datos dudosos se mantienen fuera de las tablas principales hasta contar con una fuente sólida.</div>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="rutas">
+<div class="wrap">
+<header class="section-head reveal">
+<div><div class="kicker">Selecciona tu luchador</div><h2>Dos rutas posibles</h2></div>
+<p>La primera prioriza aprendizaje, transparencia y control del código. La segunda busca una experiencia más cercana al cliente original, pero añade más dependencias y riesgo técnico.</p>
+</header>
+<div class="route-grid">
+<article class="route-card reveal">
+<div class="route-number">Ruta 01 / recomendada para empezar</div>
+<h3>Remake en Python</h3>
+<p>Proyecto comunitario reescrito con Python 3.12 y Arcade. Incluye cliente, servidor propio y una herramienta para inspeccionar formatos de recursos del juego.</p>
+<div class="chips"><span class="chip">Código legible</span><span class="chip">Sin base de datos</span><span class="chip">Ideal para aprender</span></div>
+<div class="meter"><div class="meter-top"><span>Facilidad de instalación</span><span>85%</span></div><div class="track"><div class="fill" style="width:85%"></div></div></div>
+<div class="meter"><div class="meter-top"><span>Fidelidad al juego original</span><span>55%</span></div><div class="track"><div class="fill" style="width:55%"></div></div></div>
+<div class="best-for"><strong>Mejor para:</strong> estudiar Python, clases, JSON, sprites, colisiones y sockets sin depender de un ejecutable antiguo.</div>
+</article>
+<article class="route-card emu reveal">
+<div class="route-number">Ruta 02 / laboratorio avanzado</div>
+<h3>Emulador Season 3</h3>
+<p>Repack comunitario con emulador, fuente compilable, cliente coreano, launcher MFStart y conexión a MySQL o MariaDB mediante archivos de configuración.</p>
+<div class="chips"><span class="chip">Cliente clásico</span><span class="chip">C# + SQL</span><span class="chip">Más configuración</span></div>
+<div class="meter"><div class="meter-top"><span>Facilidad de instalación</span><span>48%</span></div><div class="track"><div class="fill" style="width:48%"></div></div></div>
+<div class="meter"><div class="meter-top"><span>Fidelidad al juego original</span><span>82%</span></div><div class="track"><div class="fill" style="width:82%"></div></div></div>
+<div class="best-for"><strong>Mejor para:</strong> investigar la arquitectura antigua, comparar cliente-servidor y probar contenido del cliente original dentro de una máquina virtual.</div>
+</article>
+</div>
+<div class="compare-wrap reveal">
+<table class="compare-table">
+<thead><tr><th>Criterio</th><th>Remake Python</th><th>Season 3</th></tr></thead>
+<tbody>
+<tr><td>Dependencias principales</td><td>Python + Arcade</td><td>Windows + C# + MySQL/MariaDB</td></tr>
+<tr><td>Base de datos</td><td class="good">No requerida</td><td class="warn">Sí</td></tr>
+<tr><td>Ejecutables antiguos</td><td class="good">No</td><td class="warn">Sí</td></tr>
+<tr><td>Aprendizaje de programación</td><td class="good">Muy alto</td><td>Medio/alto</td></tr>
+<tr><td>Estado</td><td>WIP, varios personajes pendientes</td><td>Emulador incompleto, repack actualizado</td></tr>
+<tr><td>Entorno sugerido</td><td>Windows normal o entorno virtual de Python</td><td>Máquina virtual aislada</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<section class="section archive-section" id="historia">
+<div class="wrap">
+<header class="section-head reveal">
+<div><div class="kicker">Archivo histórico</div><h2>Cronología regional</h2></div>
+<p>Mini Fighter evolucionó de manera distinta en Corea, Taiwán y las comunidades posteriores. Usa los filtros para seguir cada línea sin mezclar versiones.</p>
+</header>
+<div class="filter-row reveal" aria-label="Filtros de cronología">
+<button class="filter-btn active" data-history-filter="all">Todo</button>
+<button class="filter-btn" data-history-filter="korea">Corea</button>
+<button class="filter-btn" data-history-filter="taiwan">Taiwán</button>
+<button class="filter-btn" data-history-filter="community">Comunidad</button>
+</div>
+<div class="timeline">
+<article class="timeline-item reveal" data-region="korea">
+<div class="timeline-top"><span class="timeline-year">2007</span><span class="region-tag">Corea</span></div>
+<h3>Inicio del servicio abierto</h3>
+<p>Las referencias coreanas sitúan el arranque del servicio abierto de 미니파이터 a comienzos de 2007 bajo Netmarble, consolidando su mezcla de combate lateral, RPG y cartas.</p>
+<div class="timeline-links"><a class="micro-link" target="_blank" rel="noopener" href="https://www.ggemguide.com/m_news_view.htm?uid=11208">Fuente coreana</a></div>
+</article>
+<article class="timeline-item reveal" data-region="taiwan">
+<div class="timeline-top"><span class="timeline-year">2010</span><span class="region-tag">Taiwán</span></div>
+<h3>Relanzamiento como 迷你格鬥 Online</h3>
+<p>La operación taiwanesa presentó una identidad inspirada en una máquina arcade retro, personajes Q y una fuerte división visual entre energía azul y roja.</p>
+<div class="timeline-links"><a class="micro-link" target="_blank" rel="noopener" href="https://gnn.gamer.com.tw/detail.php?sn=48850">Anuncio de nombre</a><a class="micro-link" target="_blank" rel="noopener" href="https://news.gamebase.com.tw/news/detail/91910049">Diseño del sitio</a></div>
+</article>
+<article class="timeline-item reveal" data-region="korea">
+<div class="timeline-top"><span class="timeline-year">2010</span><span class="region-tag">Corea</span></div>
+<h3>Expansión del sistema de despertar</h3>
+<p>Las actualizaciones coreanas presentaron variantes despertadas con cambios de apariencia, estadísticas y patrones de habilidad, como Tien y Saryunbi.</p>
+<div class="timeline-links"><a class="micro-link" target="_blank" rel="noopener" href="https://www.inven.co.kr/webzine/news/?news=29090">Saryunbi despertado</a><a class="micro-link" target="_blank" rel="noopener" href="https://www.dailyesports.com/view.php?ud=201004291519560025939_26">Tien despertada</a></div>
+</article>
+<article class="timeline-item reveal" data-region="taiwan">
+<div class="timeline-top"><span class="timeline-year">2011</span><span class="region-tag">Taiwán</span></div>
+<h3>Asedios, apuestas y nuevas evoluciones</h3>
+<p>Las publicaciones regionales documentan Guerra de Castillos, Batalla de Apuestas, fortalecimiento de cartas y la llegada de personajes despertados y furiosos.</p>
+<div class="timeline-links"><a class="micro-link" target="_blank" rel="noopener" href="https://kn.gamme.com.tw/201103308513.html">Apuestas y fortalecimiento</a><a class="micro-link" target="_blank" rel="noopener" href="https://games.sina.com.cn/o/n/2011-08-03/1601519392.shtml">Sistema furioso</a></div>
+</article>
+<article class="timeline-item reveal" data-region="korea">
+<div class="timeline-top"><span class="timeline-year">2012</span><span class="region-tag">Corea</span></div>
+<h3>Furia como etapa avanzada</h3>
+<p>La variante furiosa de Tien se obtenía mediante combinación de cartas normal, de clase y despertada, junto con materiales especiales; la furia se activaba al acumular daño.</p>
+<div class="timeline-links"><a class="micro-link" target="_blank" rel="noopener" href="https://www.gamemeca.com/view.php?gid=104086">Furious Tien</a></div>
+</article>
+<article class="timeline-item reveal" data-region="community">
+<div class="timeline-top"><span class="timeline-year">2018–2026</span><span class="region-tag">Comunidad</span></div>
+<h3>Emulación, remake y herramientas</h3>
+<p>La preservación técnica pasa por un emulador Season 3, un remake en Python y una caja de herramientas capaz de inspeccionar formatos como SPR, ARK, SM y DAT.</p>
+<div class="timeline-links"><a class="micro-link" target="_blank" rel="noopener" href="https://forum.ragezone.com/threads/mini-fighter-season-3-files-db-client-tools.1156160/page-3">Emulador y contexto</a><a class="micro-link" target="_blank" rel="noopener" href="https://forum.ragezone.com/threads/mini-fighter-season-3-files-db-client-tools.1156160/page-4">Remake y Toolbox</a></div>
+</article>
+</div>
+</div>
+</section>
+
+<section class="section" id="sistemas">
+<div class="wrap">
+<header class="section-head reveal">
+<div><div class="kicker">Base de combate</div><h2>Sistemas y modos</h2></div>
+<p>Esta síntesis distingue sistemas documentados oficialmente de funciones que todavía deben comprobarse dentro de los proyectos comunitarios.</p>
+</header>
+<div class="systems-grid">
+<article class="system-card panel reveal"><div class="system-icon">🃏</div><h3>Cartas de personaje</h3><p>Las cartas determinaban el personaje y su etapa de evolución. Las comunidades taiwanesas describen rarezas por estrellas y progresiones diferenciadas.</p><div class="evolution"><span>Normal</span><i>›</i><span>Clase</span><i>›</i><span>Despertar</span><i>›</i><span>Furia</span></div></article>
+<article class="system-card panel reveal"><div class="system-icon">⚡</div><h3>Despertar</h3><p>Las formas despertadas alteraban apariencia, estadísticas, alcance y repertorio. Algunas publicaciones taiwanesas describen personajes visualmente más grandes.</p></article>
+<article class="system-card panel reveal"><div class="system-icon">🔥</div><h3>Furia / Berserk</h3><p>La energía furiosa se vinculaba con el daño recibido y habilitaba ataques más potentes. La obtención requería combinaciones y materiales especiales.</p></article>
+<article class="system-card panel reveal"><div class="system-icon">🧰</div><h3>Progresión</h3><p>Además de cartas, existieron refuerzo, objetos, cristales, moneda y sistemas regionales. Las recetas deben etiquetarse por temporada y servidor.</p></article>
+</div>
+<div class="mode-board reveal">
+<div class="mode-card"><strong>⚔ Duelo y equipos</strong><span>Combate competitivo clásico y variantes por grupos.</span></div>
+<div class="mode-card"><strong>🏰 Guerra de castillos</strong><span>Modo de asedio documentado en actualizaciones taiwanesas.</span></div>
+<div class="mode-card"><strong>💰 Batalla de apuestas</strong><span>Modo regional donde el riesgo y la recompensa formaban parte de la partida.</span></div>
+<div class="mode-card"><strong>🚩 Objetivos</strong><span>Variantes de bandera, arena y reglas especiales según versión.</span></div>
+<div class="mode-card"><strong>🗺 Arcade / PvE</strong><span>Etapas laterales, enemigos, jefes y progresión fuera del PvP.</span></div>
+<div class="mode-card"><strong>🏆 Gran Arena</strong><span>Competición y eventos; el emulador reciente menciona comandos relacionados.</span></div>
+<div class="mode-card"><strong>🎣 Actividades sociales</strong><span>Pesca, villa y eventos temporales documentados en publicaciones regionales.</span></div>
+<div class="mode-card"><strong>🧠 Minijuegos</strong><span>Concursos y modos casuales complementaban el combate principal.</span></div>
+</div>
+<div class="matrix-wrap reveal">
+<table class="feature-matrix"><thead><tr><th>Función</th><th>Juego oficial</th><th>Python Remake</th><th>Season 3</th></tr></thead><tbody>
+<tr><td>Cliente jugable</td><td class="matrix-yes">Histórico</td><td class="matrix-yes">Incluido</td><td class="matrix-part">Cliente clásico</td></tr>
+<tr><td>Servidor propio</td><td class="matrix-yes">Oficial, cerrado</td><td class="matrix-yes">Código incluido</td><td class="matrix-part">Emulador</td></tr>
+<tr><td>Base de datos SQL</td><td class="matrix-yes">Sí</td><td class="matrix-no">No requerida</td><td class="matrix-yes">MySQL/MariaDB</td></tr>
+<tr><td>Cartas y evolución</td><td class="matrix-yes">Completo por versión</td><td class="matrix-part">En desarrollo</td><td class="matrix-part">Comprobar por función</td></tr>
+<tr><td>Herramientas de recursos</td><td class="matrix-no">Internas</td><td class="matrix-yes">Toolbox comunitaria</td><td class="matrix-part">Compatible según formato</td></tr>
+<tr><td>Estado verificable</td><td class="matrix-no">Servicio finalizado</td><td class="matrix-part">WIP</td><td class="matrix-part">Parcial / con errores</td></tr>
+</tbody></table>
+</div>
+</div>
+</section>
+
+<section class="section archive-section" id="archivo">
+<div class="wrap">
+<header class="section-head reveal">
+<div><div class="kicker">Data vault</div><h2>Archivo técnico</h2></div>
+<p>Un mapa educativo de los formatos citados por la comunidad. Antes de editar cualquier recurso, conserva el original y trabaja sobre una copia.</p>
+</header>
+<div class="format-grid">
+<article class="format-card panel reveal"><div class="format-ext">.SPR</div><h3>Sprites y animaciones</h3><p>Fotogramas de personajes, efectos y objetos. La Toolbox permite visualizarlos y exportarlos como imágenes PNG.</p><span class="format-tag">Visualización / exportación</span></article>
+<article class="format-card panel reveal"><div class="format-ext">.ARK</div><h3>Contenedores</h3><p>Paquetes que agrupan recursos del cliente. Pueden contener archivos SPR y otros datos relacionados.</p><span class="format-tag">Archivo del cliente</span></article>
+<article class="format-card panel reveal"><div class="format-ext">.SM</div><h3>Mapas</h3><p>Formato asociado a escenarios. El manual comunitario menciona visualización y exportación a PNG o TMX.</p><span class="format-tag">Mapa / escenario</span></article>
+<article class="format-card panel reveal"><div class="format-ext">.TMX</div><h3>Edición en Tiled</h3><p>Formato abierto para mapas por mosaicos, útil como salida de trabajo y análisis visual.</p><span class="format-tag">Formato de intercambio</span></article>
+<article class="format-card panel reveal"><div class="format-ext">.DAT</div><h3>Datos del cliente</h3><p>Configuraciones y textos según el archivo. Su estructura puede variar entre clientes y temporadas.</p><span class="format-tag">Revisión cautelosa</span></article>
+<article class="format-card panel reveal"><div class="format-ext">.JSON</div><h3>Configuración del remake</h3><p>El proyecto Python utiliza datos legibles para personajes, estados, cajas de colisión y otros parámetros.</p><span class="format-tag">Editable y versionable</span></article>
+</div>
+<div class="tool-flow reveal" aria-label="Flujo de trabajo recomendado">
+<div class="tool-step">1. Respaldar</div><div class="tool-step">2. Abrir en lectura</div><div class="tool-step">3. Exportar</div><div class="tool-step">4. Comparar cambios</div><div class="tool-step">5. Probar en copia</div>
+</div>
+<table class="glossary reveal"><thead><tr><th>Español</th><th>Inglés</th><th>Coreano</th><th>Chino tradicional</th></tr></thead><tbody>
+<tr><td>Mini Fighter</td><td>Mini Fighter</td><td>미니파이터</td><td>迷你格鬥 Online</td></tr>
+<tr><td>Despertar</td><td>Awakening</td><td>각성</td><td>覺醒</td></tr>
+<tr><td>Furia / furioso</td><td>Berserk / Fury</td><td>광폭</td><td>狂暴</td></tr>
+<tr><td>Guerra de castillos</td><td>Castle War</td><td>공성전</td><td>攻城戰</td></tr>
+<tr><td>Carta</td><td>Card</td><td>카드</td><td>卡片</td></tr>
+</tbody></table>
+<div class="confidence-note reveal"><strong>Nota de precisión:</strong> el mismo personaje, modo o material puede tener nombres diferentes por región. La página evita fusionar estadísticas o recetas cuando la fuente no identifica claramente la versión.</div>
+</div>
+</section>
+
+<section class="section" id="laboratorio">
+<div class="wrap">
+<header class="section-head reveal">
+<div><div class="kicker">Modo entrenamiento</div><h2>Laboratorio local</h2></div>
+<p>Cambia de ruta y revisa instalación, estructura, problemas frecuentes y notas prácticas. Los botones copian los comandos al portapapeles.</p>
+</header>
+<div class="lab">
+<aside class="route-picker panel reveal">
+<h3>Elige la ruta</h3>
+<p class="tiny">Puedes alternar sin perder la pestaña seleccionada.</p>
+<button class="choice active" data-route="python"><strong>⚡ Python Remake</strong>Más sencillo y educativo</button>
+<button class="choice" data-route="emulator"><strong>🔥 Season 3</strong>Más fiel y técnico</button>
+</aside>
+<div class="lab-content panel reveal">
+<div class="tab-head">
+<button class="tab-btn active" data-tab="install">Instalación</button>
+<button class="tab-btn" data-tab="files">Archivos</button>
+<button class="tab-btn" data-tab="issues">Problemas</button>
+<button class="tab-btn" data-tab="notes">Notas</button>
+</div>
+<div class="tab-body">
+<section class="route-view active" data-view="python">
+<div class="route-title"><h3>Python Remake</h3><span class="status">Ruta recomendada</span></div>
+<div class="tab-pane active" data-pane="install">
+<div class="install-lead">
+<div class="install-stat"><small>Dificultad</small><strong>Principiante / intermedia</strong></div>
+<div class="install-stat"><small>Entorno</small><strong>Windows 10 u 11 · 64 bits</strong></div>
+<div class="install-stat"><small>Resultado</small><strong>Juego local + servidor Python</strong></div>
+</div>
+<div class="install-block">
+<h4 class="install-block-title">Requisitos antes de comenzar</h4>
+<div class="req-grid">
+<div class="req-card"><strong>Python 3.12 para Windows</strong><span>Usa preferentemente Python 3.12.10, la última versión 3.12 que conserva instalador oficial para Windows.</span></div>
+<div class="req-card"><strong>Gráficos compatibles</strong><span>Arcade necesita una GPU o controlador con OpenGL 3.3 o superior. Actualiza el controlador AMD, Intel o NVIDIA si la ventana no inicia.</span></div>
+<div class="req-card"><strong>Espacio y memoria sugeridos</strong><span>Reserva aproximadamente 2 GB libres y al menos 4 GB de RAM. Son valores prácticos para código, recursos y entorno virtual.</span></div>
+<div class="req-card"><strong>Herramientas opcionales</strong><span>VS Code o PyCharm ayudan a revisar el código, pero también puedes usar PowerShell y cualquier editor de texto.</span></div>
+</div>
+<div class="install-note safe"><strong>Ventaja:</strong> esta ruta no necesita MySQL, cuenta administradora ni panel GM. El progreso individual se guarda en <code>savegame.json</code>.</div>
+</div>
+<div class="install-block">
+<h4 class="install-block-title">Fuentes y enlaces que debes visitar</h4>
+<div class="resource-grid">
+<a class="resource-link" href="https://forum.ragezone.com/threads/mini-fighter-season-3-files-db-client-tools.1156160/page-3" rel="noopener" target="_blank"><em>Comunidad · requiere registro</em><strong>Publicación del remake en RaGEZONE</strong><span>Busca el post de junio de 2026 que menciona Python 3.12, Arcade 3.3.3 y el código completo.</span></a>
+<a class="resource-link" href="https://www.python.org/downloads/release/python-31210/" rel="noopener" target="_blank"><em>Fuente oficial</em><strong>Python 3.12.10 para Windows</strong><span>Descarga el instalador oficial de 64 bits de la rama compatible indicada por el autor.</span></a>
+<a class="resource-link" href="https://docs.python.org/3/tutorial/venv.html" rel="noopener" target="_blank"><em>Documentación oficial</em><strong>Entornos virtuales con venv</strong><span>Explica por qué y cómo aislar las dependencias del proyecto.</span></a>
+<a class="resource-link" href="https://api.arcade.academy/en/stable/" rel="noopener" target="_blank"><em>Documentación oficial</em><strong>Python Arcade 3.3.3</strong><span>Requisitos gráficos, instalación, ejemplos y resolución de errores.</span></a>
+</div>
+<div class="install-note"><strong>No uses un mirror al azar:</strong> entra al hilo original, revisa la fecha y el autor del mensaje y analiza el archivo antes de extraerlo. Algunos adjuntos solo aparecen al iniciar sesión.</div>
+</div>
+<div class="install-block">
+<h4 class="install-block-title">Instalación paso a paso</h4>
+<div class="steps">
+<article class="step"><h4>Crea una carpeta de laboratorio</h4><p>Evita Escritorio, OneDrive y rutas con caracteres extraños. Crea una ubicación sencilla y extrae allí el proyecto.</p><span class="step-sub">Ejemplo recomendado</span><div class="code">mkdir C:\MiniFighterLab
+cd C:\MiniFighterLab<button class="copy">COPIAR</button></div></article>
+<article class="step"><h4>Obtén el proyecto desde la publicación original</h4><p>Abre RaGEZONE, inicia sesión o regístrate, localiza el post del remake en Python y descarga únicamente el adjunto asociado a esa publicación. Conserva el ZIP original sin modificar.</p></article>
+<article class="step"><h4>Analiza y extrae el archivo</h4><p>Examina el ZIP con Microsoft Defender o VirusTotal. Después descomprímelo en una carpeta como <code>C:\MiniFighterLab\MiniFighterPython</code>.</p></article>
+<article class="step"><h4>Instala Python 3.12.10</h4><p>Descarga el instalador oficial de Windows. Durante el asistente activa <strong>Add python.exe to PATH</strong> y completa la instalación para tu usuario.</p><span class="step-sub">Comprobación en PowerShell</span><div class="code">py -3.12 --version
+python --version<button class="copy">COPIAR</button></div></article>
+<article class="step"><h4>Abre una terminal dentro del proyecto</h4><p>En el Explorador de archivos entra a la carpeta raíz, haz clic en la barra de dirección, escribe <code>powershell</code> y pulsa Enter.</p><div class="code">cd C:\MiniFighterLab\MiniFighterPython
+dir<button class="copy">COPIAR</button></div></article>
+<article class="step"><h4>Crea y activa el entorno virtual</h4><p>El entorno mantiene Arcade y las demás librerías separadas del Python general de tu computadora.</p><div class="code">py -3.12 -m venv .venv
+.\.venv\Scripts\Activate.ps1<button class="copy">COPIAR</button></div><span class="step-sub">Si PowerShell bloquea la activación, abre CMD y usa: <code>.venv\Scripts\activate.bat</code>.</span></article>
+<article class="step"><h4>Instala las dependencias</h4><p>Actualiza pip. Si el paquete trae <code>requirements.txt</code>, instálalo; de lo contrario instala la versión de Arcade indicada por el autor.</p><div class="code">python -m pip install --upgrade pip
+
+# Usa este comando si existe requirements.txt
+python -m pip install -r requirements.txt
+
+# Si no existe, instala Arcade directamente
+python -m pip install arcade==3.3.3<button class="copy">COPIAR</button></div></article>
+<article class="step"><h4>Comprueba Arcade antes de abrir el juego</h4><p>Este comando debe mostrar una versión sin lanzar excepciones. Si falla, revisa la pestaña Problemas.</p><div class="code">python -c "import arcade; print(arcade.__version__)"<button class="copy">COPIAR</button></div></article>
+<article class="step"><h4>Prueba primero el modo individual</h4><p>Ejecuta el archivo principal desde la raíz del proyecto. No lo abras haciendo doble clic: así podrás leer cualquier error de la terminal.</p><div class="code">python src\main.py<button class="copy">COPIAR</button></div></article>
+<article class="step"><h4>Prueba el servidor multijugador local</h4><p>Abre dos terminales con el entorno activado. Inicia primero el servidor y luego el cliente. Mantén la dirección en <code>127.0.0.1</code>.</p><div class="code"># Terminal 1: servidor
+python server\server.py
+
+# Terminal 2: cliente
+python src\main.py<button class="copy">COPIAR</button></div></article>
+<article class="step"><h4>Abre la caja de herramientas opcional</h4><p>La ruta exacta puede variar entre versiones. Busca <code>AllInOneMFOToolbox.py</code> dentro de la carpeta de herramientas y ejecútalo desde la terminal.</p><div class="code">python AllInOneMFOToolbox\260519\AllInOneMFOToolbox.py<button class="copy">COPIAR</button></div></article>
+</div>
+</div>
+<div class="install-block">
+<h4 class="install-block-title">Cómo saber si funcionó</h4>
+<div class="verify-list">
+<div class="verify-item"><b>✓</b><span><code>python --version</code> muestra una versión 3.12.x.</span></div>
+<div class="verify-item"><b>✓</b><span>La terminal muestra <code>(.venv)</code> al inicio de la línea.</span></div>
+<div class="verify-item"><b>✓</b><span>Arcade se importa sin errores y la ventana del juego aparece.</span></div>
+<div class="verify-item"><b>✓</b><span>Después de jugar solo aparece o se actualiza <code>savegame.json</code>.</span></div>
+<div class="verify-item"><b>✓</b><span>Al iniciar <code>server.py</code>, la consola queda abierta esperando conexiones y el cliente puede conectarse localmente.</span></div>
+</div>
+</div>
+</div>
+<div class="tab-pane" data-pane="files">
+<div class="pane-intro"><strong>Mapa de archivos después de instalar</strong><p>Compara tu carpeta con este mapa. Los nombres pueden variar ligeramente según la revisión del proyecto; no renombres archivos hasta lograr la primera ejecución funcional.</p></div>
+<div class="file-legend"><span class="legend-item downloaded">Incluido en el paquete</span><span class="legend-item generated">Creado durante la instalación</span><span class="legend-item optional">Puede no existir</span></div>
+<div class="tree-visual">
+<div class="tree-group">
+<div class="tree-row critical"><span class="tree-icon">📁</span><span class="tree-label">MiniFighterPython/</span><span class="tree-note">raíz de trabajo</span></div>
+<div class="tree-row level-1 optional"><span class="tree-icon">📄</span><span class="tree-label">README / instrucciones</span><span class="tree-note">leer primero si está incluido</span></div>
+<div class="tree-row level-1 optional"><span class="tree-icon">📄</span><span class="tree-label">requirements.txt</span><span class="tree-note">dependencias exactas, si existe</span></div>
+<div class="tree-row level-1 generated"><span class="tree-icon">📁</span><span class="tree-label">.venv/</span><span class="tree-note">entorno virtual creado por ti</span></div>
+</div>
+<div class="tree-group">
+<div class="tree-row level-1 critical"><span class="tree-icon">📁</span><span class="tree-label">src/</span><span class="tree-note">cliente y lógica principal</span></div>
+<div class="tree-row level-2 tree-file critical"><span class="tree-icon">▶</span><span class="tree-label">main.py</span><span class="tree-note">punto de entrada del juego</span></div>
+<div class="tree-row level-2 tree-file"><span class="tree-icon">📄</span><span class="tree-label">player.py</span><span class="tree-note">estado y comportamiento del jugador</span></div>
+<div class="tree-row level-2 tree-file"><span class="tree-icon">📄</span><span class="tree-label">otros módulos .py</span><span class="tree-note">ventanas, combate, mapas y utilidades</span></div>
+</div>
+<div class="tree-group">
+<div class="tree-row level-1 critical"><span class="tree-icon">📁</span><span class="tree-label">server/</span><span class="tree-note">servidor multijugador local</span></div>
+<div class="tree-row level-2 tree-file critical"><span class="tree-icon">▶</span><span class="tree-label">server.py</span><span class="tree-note">iniciar antes del cliente multijugador</span></div>
+</div>
+<div class="tree-group">
+<div class="tree-row level-1 critical"><span class="tree-icon">📁</span><span class="tree-label">assets/</span><span class="tree-note">recursos necesarios para dibujar y cargar contenido</span></div>
+<div class="tree-row level-2"><span class="tree-icon">📁</span><span class="tree-label">data/</span><span class="tree-note">configuración y datos auxiliares</span></div>
+<div class="tree-row level-2"><span class="tree-icon">📁</span><span class="tree-label">mfo_data/</span><span class="tree-note">recursos originales interpretados por el proyecto</span></div>
+</div>
+<div class="tree-group">
+<div class="tree-row level-1 optional"><span class="tree-icon">🧰</span><span class="tree-label">AllInOneMFOToolbox/</span><span class="tree-note">visor y exportador de SPR, ARK, SM y DAT</span></div>
+<div class="tree-row level-1 tree-file generated"><span class="tree-icon">💾</span><span class="tree-label">savegame.json</span><span class="tree-note">progreso local; puede aparecer al guardar</span></div>
+</div>
+</div>
+<div class="file-guide">
+<article class="file-guide-card"><h4>Archivos que debes ejecutar</h4><p><code>src/main.py</code> abre el juego. <code>server/server.py</code> se usa únicamente cuando quieres probar el modo cliente-servidor.</p></article>
+<article class="file-guide-card"><h4>Archivos que debes respaldar</h4><p>Copia <code>savegame.json</code> antes de modificar personajes o estructuras de datos. Guarda también el ZIP original sin cambios.</p></article>
+<article class="file-guide-card"><h4>Carpetas que no debes mover</h4><p>Mantén <code>src</code>, <code>server</code> y <code>assets</code> en sus posiciones relativas. Muchos proyectos cargan recursos usando rutas basadas en la carpeta raíz.</p></article>
+<article class="file-guide-card"><h4>Elementos que puedes regenerar</h4><p><code>.venv</code> no forma parte del juego: puede eliminarse y crearse otra vez. No lo mezcles con el ZIP que conservas como copia original.</p></article>
+</div>
+<div class="file-flow"><div class="flow-node">Activar <code>.venv</code></div><div class="flow-arrow">→</div><div class="flow-node">Iniciar <code>server.py</code><br/><small>solo multijugador</small></div><div class="flow-arrow">→</div><div class="flow-node">Abrir <code>main.py</code></div><div class="flow-arrow">→</div><div class="flow-node">Respaldar <code>savegame.json</code></div></div>
+</div>
+<div class="tab-pane" data-pane="issues">
+<div class="pane-intro"><strong>Diagnóstico por orden</strong><p>Empieza por versión de Python y entorno virtual, continúa con dependencias y gráficos, y solo después revisa el código o los recursos. Copia el error completo antes de cambiar archivos.</p></div>
+<div class="issues">
+<details open=""><summary>Python 3.12 no se encuentra o se ejecuta otra versión</summary><p>Comprueba qué intérpretes reconoce Windows. Usa el lanzador <code>py</code> para crear el entorno con la rama correcta.</p><div class="code">py -0p
+py -3.12 --version
+where python<button class="copy">COPIAR</button></div><div class="issue-tools"><span class="issue-tag check">Comprobar PATH</span><span class="issue-tag fix">Recrear .venv</span></div></details>
+<details><summary>PowerShell bloquea la activación de .venv</summary><p>No necesitas cambiar permanentemente la política del equipo. Abre CMD dentro de la carpeta y activa el entorno con el script alternativo.</p><div class="code">.venv\Scriptsctivate.bat
+python --version<button class="copy">COPIAR</button></div><div class="issue-tools"><span class="issue-tag fix">Alternativa segura</span></div></details>
+<details><summary>Arcade no está instalado o aparece ModuleNotFoundError</summary><p>Confirma que <code>pip</code> corresponde al Python activo y revisa la versión instalada. Instala primero el archivo de requisitos cuando exista.</p><div class="code">python -m pip --version
+python -m pip show arcade
+python -m pip install arcade==3.3.3<button class="copy">COPIAR</button></div><div class="issue-tools"><span class="issue-tag check">Entorno activo</span><span class="issue-tag fix">Reinstalar paquete</span></div></details>
+<details><summary>La ventana no abre, queda negra o menciona OpenGL</summary><p>Arcade necesita OpenGL 3.3 o superior. Actualiza el controlador desde AMD, Intel o NVIDIA; evita controladores genéricos de Windows y prueba sin escritorio remoto.</p><ul><li>Comprueba si otros ejemplos de Arcade pueden abrir una ventana.</li><li>Prueba en la pantalla principal si tienes varios monitores.</li><li>No descargues DLL gráficas sueltas desde páginas desconocidas.</li></ul><div class="issue-tools"><span class="issue-tag risk">Controlador gráfico</span></div></details>
+<details><summary>FileNotFoundError o faltan sprites, sonidos o DAT</summary><p>Ejecuta los comandos desde la carpeta raíz del proyecto, no desde <code>src</code>. Comprueba que <code>assets</code> permanezca junto a las carpetas originales y que el antivirus no haya puesto archivos en cuarentena.</p><div class="code">cd C:\MiniFighterLab\MiniFighterPython
+Get-ChildItem .ssets
+python .\src\main.py<button class="copy">COPIAR</button></div><div class="issue-tools"><span class="issue-tag check">Rutas relativas</span><span class="issue-tag risk">Archivo faltante</span></div></details>
+<details><summary>El cliente no conecta al servidor local</summary><p>Inicia primero <code>server.py</code>, conserva la consola abierta y luego ejecuta el cliente. Verifica que ambos usen el mismo host y puerto; mantén la IP en <code>127.0.0.1</code>.</p><div class="code"># Terminal 1
+python .\server\server.py
+
+# Terminal 2
+python .\src\main.py<button class="copy">COPIAR</button></div><div class="issue-tools"><span class="issue-tag check">Servidor primero</span><span class="issue-tag check">Mismo puerto</span></div></details>
+<details><summary>El puerto ya está ocupado</summary><p>Anota el puerto mostrado por el servidor y localiza el proceso que ya lo utiliza. No finalices procesos desconocidos; cambia el puerto solo si puedes actualizar servidor y cliente de forma coherente.</p><div class="code">netstat -ano | findstr LISTENING<button class="copy">COPIAR</button></div><div class="issue-tools"><span class="issue-tag risk">No cerrar procesos al azar</span></div></details>
+<details><summary>savegame.json quedó vacío o corrupto</summary><p>Cierra el juego antes de reemplazarlo. Valida el JSON y restaura tu copia. Si el archivo se genera automáticamente, renómbralo en vez de eliminarlo hasta comprobar que el juego crea uno nuevo.</p><div class="code">python -m json.tool .\savegame.json<button class="copy">COPIAR</button></div><div class="issue-tools"><span class="issue-tag check">Validar JSON</span><span class="issue-tag fix">Restaurar respaldo</span></div></details>
+<details><summary>AllInOneMFOToolbox no abre un recurso</summary><p>Prueba primero con una copia del archivo y confirma que el formato corresponda a SPR, ARK, SM o DAT. Algunas revisiones del cliente pueden usar variantes todavía no implementadas.</p><div class="issue-tools"><span class="issue-tag risk">Formato no compatible</span><span class="issue-tag fix">Trabajar sobre copia</span></div></details>
+</div>
+<div class="warning"><strong>Regla de depuración:</strong> cambia una sola cosa cada vez. Guarda el mensaje exacto, el comando ejecutado y la versión de Python antes de pedir ayuda en el hilo comunitario.</div>
+</div>
+<div class="tab-pane" data-pane="notes">
+<div class="pane-intro"><strong>Flujo recomendado para aprender sin romper el proyecto</strong><p>Primero consigue una ejecución limpia; después crea una copia de trabajo y modifica componentes pequeños. El remake es un proyecto en desarrollo, por lo que contenido presente en los recursos puede no estar implementado todavía.</p></div>
+<div class="notes-grid">
+<article class="note-card"><h4>Congela el entorno funcional</h4><p>Cuando el juego abra, guarda las versiones instaladas con <code>python -m pip freeze &gt; requirements-local.txt</code>. Así puedes reconstruir el entorno más adelante.</p></article>
+<article class="note-card"><h4>Usa control de versiones</h4><p>Inicializa Git solo en tu copia de código. Excluye <code>.venv</code>, archivos temporales y recursos que no tengas derecho a redistribuir.</p></article>
+<article class="note-card"><h4>Prueba por capas</h4><p>Orden sugerido: modo individual → carga de recursos → guardado → servidor local → segundo cliente. Esto reduce la cantidad de causas posibles ante un fallo.</p></article>
+<article class="note-card"><h4>Separa código y recursos</h4><p>No conviertas ni sobrescribas archivos dentro de <code>assets</code> durante las primeras pruebas. Exporta con la Toolbox hacia otra carpeta.</p></article>
+<article class="note-card"><h4>Documenta cada personaje</h4><p>Para implementar contenido registra animaciones, estados, colisiones, velocidad, daño y entradas. Que un sprite exista no significa que su lógica esté terminada.</p></article>
+<article class="note-card"><h4>Mantén localhost</h4><p>Para aprender sockets no necesitas publicar el servidor. Usa <code>127.0.0.1</code>; una prueba en red local debe hacerse después y con reglas de firewall explícitas.</p></article>
+</div>
+<div class="note-checklist">
+<div class="note-check"><b>✓</b><span>Conservar el ZIP original y una copia del proyecto que ya funciona.</span></div>
+<div class="note-check"><b>✓</b><span>Respaldar <code>savegame.json</code> antes de cambiar estructuras o personajes.</span></div>
+<div class="note-check"><b>✓</b><span>Anotar versión de Python, Arcade y commit o fecha del paquete comunitario.</span></div>
+<div class="note-check"><b>✓</b><span>No publicar recursos del cliente ni paquetes reconstruidos sin autorización.</span></div>
+</div>
+<table class="source-priority"><thead><tr><th>Prioridad</th><th>Fuente de verdad</th><th>Uso</th></tr></thead><tbody><tr><td>1</td><td><a href="https://forum.ragezone.com/threads/mini-fighter-season-3-files-db-client-tools.1156160/page-3" rel="noopener" target="_blank">Post del autor en RaGEZONE</a></td><td>Versión, dependencias y estado publicado.</td></tr><tr><td>2</td><td>README o archivos del paquete</td><td>Nombres y comandos específicos de la revisión descargada.</td></tr><tr><td>3</td><td>Documentación oficial de Python y Arcade</td><td>Instalación y errores de las dependencias.</td></tr><tr><td>4</td><td>Comentarios comunitarios</td><td>Pistas útiles que debes verificar antes de aplicar.</td></tr></tbody></table>
+<div class="warning"><strong>Alcance actual:</strong> no asumas que todos los personajes, modos o recursos están funcionales. Diferencia siempre entre “archivo presente”, “recurso visible” y “mecánica implementada”.</div>
+</div>
+</section>
+<section class="route-view" data-view="emulator">
+<div class="route-title"><h3>Emulador Season 3</h3><span class="status" style="color:#ffb26c;border-color:rgba(255,157,40,.35);background:rgba(255,157,40,.07)">Máquina virtual</span></div>
+<div class="tab-pane active" data-pane="install">
+<div class="install-lead">
+<div class="install-stat"><small>Dificultad</small><strong>Intermedia / avanzada</strong></div>
+<div class="install-stat"><small>Entorno</small><strong>Windows aislado · VM recomendada</strong></div>
+<div class="install-stat"><small>Resultado</small><strong>Servidor C# + base SQL + cliente</strong></div>
+</div>
+<div class="install-block">
+<h4 class="install-block-title">Requisitos antes de comenzar</h4>
+<div class="req-grid">
+<div class="req-card"><strong>Virtualización activada</strong><span>Comprueba en Administrador de tareas → Rendimiento → CPU que “Virtualización” indique Habilitada.</span></div>
+<div class="req-card"><strong>Recursos sugeridos</strong><span>Para el equipo anfitrión: 8 GB de RAM como mínimo práctico; asigna 4 GB y 2 núcleos a la VM cuando sea posible.</span></div>
+<div class="req-card"><strong>Windows dentro de la VM</strong><span>Usa una instalación limpia de Windows 10 u 11. Crea una instantánea antes de abrir cualquier EXE o DLL comunitaria.</span></div>
+<div class="req-card"><strong>MariaDB o MySQL</strong><span>El repack actualizado declara compatibilidad con versiones recientes de MySQL y MariaDB mediante un conector renovado.</span></div>
+<div class="req-card"><strong>Espacio libre</strong><span>Reserva al menos 20 GB para la máquina virtual, Windows, base de datos, cliente y copias de seguridad.</span></div>
+<div class="req-card"><strong>Runtimes adicionales</strong><span>El ejecutable puede pedir .NET Framework o componentes Visual C++. Instala únicamente el runtime oficial que Windows identifique.</span></div>
+</div>
+<div class="install-note"><strong>Riesgo superior:</strong> esta ruta usa binarios y DLL compartidos por terceros. No la ejecutes directamente en el sistema que usas para estudiar o trabajar.</div>
+</div>
+<div class="install-block">
+<h4 class="install-block-title">Fuentes y enlaces que debes visitar</h4>
+<div class="resource-grid">
+<a class="resource-link" href="https://forum.ragezone.com/threads/mini-fighter-season-3-files-db-client-tools.1156160/page-4" rel="noopener" target="_blank"><em>Comunidad · requiere registro</em><strong>Repack actualizado de Season 3</strong><span>Busca el post #66 de julio de 2026 con el emulador, fuente, cliente, MFStart y pasos resumidos.</span></a>
+<a class="resource-link" href="https://mariadb.org/download/" rel="noopener" target="_blank"><em>Fuente oficial</em><strong>Descargar MariaDB Server</strong><span>Obtén el instalador para Windows desde el proyecto oficial.</span></a>
+<a class="resource-link" href="https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows" rel="noopener" target="_blank"><em>Documentación oficial</em><strong>Instalar MariaDB con MSI</strong><span>Guía del asistente, servicio de Windows y configuración inicial.</span></a>
+<a class="resource-link" href="https://mariadb.com/docs/server/clients-and-utilities/mariadb-client/mariadb-command-line-client" rel="noopener" target="_blank"><em>Documentación oficial</em><strong>Cliente de línea de comandos</strong><span>Referencia para conectarte, crear la base e importar el archivo SQL.</span></a>
+<a class="resource-link" href="https://www.virtualbox.org/wiki/Downloads" rel="noopener" target="_blank"><em>Virtualización oficial</em><strong>Oracle VirtualBox</strong><span>Opción persistente para instalar Windows, tomar instantáneas y conservar los cambios.</span></a>
+<a class="resource-link" href="https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-install" rel="noopener" target="_blank"><em>Documentación Microsoft</em><strong>Windows Sandbox</strong><span>Alternativa desechable para una primera inspección; al cerrarla elimina el estado.</span></a>
+<a class="resource-link" href="https://www.virustotal.com/gui/home/upload" rel="noopener" target="_blank"><em>Herramienta de seguridad</em><strong>VirusTotal</strong><span>Analiza archivos individuales y compara resultados de múltiples motores.</span></a>
+</div>
+<div class="install-note"><strong>Importante:</strong> no enlazamos mirrors directos del cliente. Entra al post original, revisa autor, fecha y comentarios posteriores. Que un archivo esté adjunto a un foro no demuestra que sea seguro.</div>
+</div>
+<div class="install-block">
+<h4 class="install-block-title">Instalación paso a paso</h4>
+<div class="steps">
+<article class="step"><h4>Comprueba y activa la virtualización</h4><p>Abre Administrador de tareas → Rendimiento → CPU. Si aparece deshabilitada, actívala desde BIOS/UEFI antes de instalar la máquina virtual.</p></article>
+<article class="step"><h4>Crea una máquina virtual limpia</h4><p>Instala VirtualBox u otra solución fiable, crea una VM de Windows y toma una instantánea llamada <code>Windows limpio</code>. Para una revisión rápida también puedes usar Windows Sandbox, sabiendo que elimina todo al cerrarse.</p></article>
+<article class="step"><h4>Limita la red y las integraciones</h4><p>En la primera ejecución usa red deshabilitada o NAT, evita carpetas compartidas y desactiva el portapapeles bidireccional. No abras puertos del router.</p></article>
+<article class="step"><h4>Obtén el repack desde el hilo original</h4><p>Abre la página 4 de RaGEZONE, localiza el post #66 y descarga el adjunto correspondiente. Es posible que necesites iniciar sesión. No uses mirrors publicados por cuentas desconocidas.</p></article>
+<article class="step"><h4>Analiza el paquete antes de ejecutarlo</h4><p>Escanea el ZIP y, después de extraerlo, analiza por separado <code>Server.exe</code>, <code>MFStart.exe</code> y las DLL. Guarda los hashes y conserva una copia intacta del paquete.</p><div class="code">Get-FileHash .\Server_MF\Server.exe -Algorithm SHA256
+Get-FileHash .\Client\MFStart.exe -Algorithm SHA256<button class="copy">COPIAR</button></div></article>
+<article class="step"><h4>Instala MariaDB dentro de la VM</h4><p>Usa el instalador MSI oficial, define una contraseña exclusiva para el laboratorio y deja el servicio configurado para iniciar con Windows. No reutilices contraseñas reales.</p><span class="step-sub">Comprueba que el cliente responde</span><div class="code">mariadb --version<button class="copy">COPIAR</button></div></article>
+<article class="step"><h4>Crea una base y un usuario local</h4><p>Abre el cliente de MariaDB. Los nombres siguientes son ejemplos seguros; puedes cambiarlos, pero deberás usar los mismos datos en <code>config.ini</code>.</p><div class="code">mariadb -u root -p
+
+CREATE DATABASE minifighter;
+CREATE USER 'mf_local'@'127.0.0.1' IDENTIFIED BY 'CAMBIA_ESTA_CLAVE';
+GRANT ALL PRIVILEGES ON minifighter.* TO 'mf_local'@'127.0.0.1';
+FLUSH PRIVILEGES;<button class="copy">COPIAR</button></div></article>
+<article class="step"><h4>Importa el archivo SQL del repack</h4><p>Dentro del cliente MariaDB selecciona la base y usa <code>SOURCE</code>. En Windows utiliza barras diagonales normales en la ruta.</p><div class="code">USE minifighter;
+SOURCE C:/MiniFighterLab/MiniFighterS3/Database/database.sql;
+SHOW TABLES;<button class="copy">COPIAR</button></div><span class="step-sub">Si el archivo SQL tiene otro nombre o ubicación, usa la ruta real que aparece en el paquete.</span></article>
+<article class="step"><h4>Configura el servidor</h4><p>Abre <code>Server_MF/config.ini</code> con Bloc de notas. Conserva los nombres de claves que ya existen y cambia únicamente sus valores equivalentes.</p>
+<table class="config-table"><thead><tr><th>Dato</th><th>Valor local recomendado</th></tr></thead><tbody><tr><td>IP del servidor</td><td><code>127.0.0.1</code></td></tr><tr><td>Host de base de datos</td><td><code>127.0.0.1</code></td></tr><tr><td>Base</td><td><code>minifighter</code></td></tr><tr><td>Usuario</td><td><code>mf_local</code></td></tr><tr><td>Contraseña</td><td>la clave exclusiva creada antes</td></tr></tbody></table>
+<div class="install-note"><strong>No inventes claves:</strong> los nombres exactos dentro de <code>config.ini</code> pueden variar. Modifica los campos existentes; no pegues una plantilla completa encima.</div>
+</article>
+<article class="step"><h4>Inicia el servidor y observa la consola</h4><p>Ejecuta el servidor desde su carpeta. No cierres la consola. Debe conectar a la base sin mensajes de credenciales, tablas ausentes o puertos ocupados.</p><div class="code">cd C:\MiniFighterLab\MiniFighterS3\Server_MF
+.\Server.exe<button class="copy">COPIAR</button></div></article>
+<article class="step"><h4>Configura MFStart para localhost</h4><p>Abre <code>Client/MFStart.ini</code> y confirma que la IP del servidor sea local. El repack reciente utiliza el launcher para evitar editar la IP directamente dentro del ejecutable del cliente.</p><div class="code">ServerIP=127.0.0.1<button class="copy">COPIAR</button></div></article>
+<article class="step"><h4>Inicia el launcher y prueba el acceso</h4><p>Con el servidor abierto, ejecuta <code>Client/MFStart.exe</code>. Para la primera prueba consulta en el post #66 las credenciales de laboratorio preconfiguradas. Úsalas únicamente dentro de la VM.</p></article>
+<article class="step"><h4>Aplica la corrección de índices solo si hace falta</h4><p>El autor publicó estas consultas para paquetes donde los objetos o cartas no se crean. Antes comprueba que las tablas estén vacías para evitar duplicados.</p><div class="code">SELECT * FROM iteminfoindex;
+SELECT * FROM carddataindex;
+
+-- Ejecutar solo cuando corresponda
+INSERT INTO iteminfoindex (ItemIndex) VALUES (0);
+INSERT INTO carddataindex (CardIndex) VALUES (0);<button class="copy">COPIAR</button></div></article>
+<article class="step"><h4>Crea una instantánea funcional</h4><p>Cuando el servidor y el cliente abran correctamente, apaga la VM y crea una nueva instantánea. Así podrás volver al estado funcional después de experimentar.</p></article>
+</div>
+</div>
+<div class="install-block">
+<h4 class="install-block-title">Cómo saber si funcionó</h4>
+<div class="verify-list">
+<div class="verify-item"><b>✓</b><span>MariaDB se inicia y <code>SHOW TABLES;</code> devuelve las tablas importadas.</span></div>
+<div class="verify-item"><b>✓</b><span><code>Server.exe</code> permanece abierto y no muestra errores de autenticación o conexión SQL.</span></div>
+<div class="verify-item"><b>✓</b><span><code>config.ini</code> y <code>MFStart.ini</code> apuntan a <code>127.0.0.1</code>.</span></div>
+<div class="verify-item"><b>✓</b><span>MFStart abre el cliente y este alcanza la pantalla de inicio de sesión.</span></div>
+<div class="verify-item"><b>✓</b><span>La cuenta local entra al juego sin depender de una IP pública ni de puertos abiertos.</span></div>
+</div>
+</div>
+</div>
+<div class="tab-pane" data-pane="files">
+<div class="pane-intro orange"><strong>Mapa del repack y del entorno instalado</strong><p>El paquete y la base de datos son partes separadas. La carpeta contiene servidor y cliente; MariaDB guarda las tablas fuera de esa carpeta. Conserva una copia intacta antes de editar INI, SQL o binarios.</p></div>
+<div class="file-legend"><span class="legend-item downloaded">Incluido en el repack</span><span class="legend-item generated">Creado durante la instalación</span><span class="legend-item optional">Depende de la revisión</span></div>
+<div class="tree-visual">
+<div class="tree-group">
+<div class="tree-row critical"><span class="tree-icon">📁</span><span class="tree-label">MiniFighterS3/</span><span class="tree-note">raíz extraída dentro de la VM</span></div>
+<div class="tree-row level-1 generated"><span class="tree-icon">🧾</span><span class="tree-label">HASHES-SHA256.txt</span><span class="tree-note">registro recomendado creado por ti</span></div>
+<div class="tree-row level-1 generated"><span class="tree-icon">🗒️</span><span class="tree-label">CAMBIOS-LOCALES.txt</span><span class="tree-note">anota cada modificación</span></div>
+</div>
+<div class="tree-group">
+<div class="tree-row level-1 critical"><span class="tree-icon">📁</span><span class="tree-label">Server_MF/</span><span class="tree-note">emulador del servidor</span></div>
+<div class="tree-row level-2 tree-file critical"><span class="tree-icon">⚙</span><span class="tree-label">config.ini</span><span class="tree-note">IP, base, usuario y contraseña</span></div>
+<div class="tree-row level-2 tree-file critical"><span class="tree-icon">▶</span><span class="tree-label">Server.exe</span><span class="tree-note">arrancar antes que MFStart</span></div>
+<div class="tree-row level-2"><span class="tree-icon">📁</span><span class="tree-label">source/</span><span class="tree-note">código fuente incluido, si corresponde</span></div>
+<div class="tree-row level-2 optional"><span class="tree-icon">📄</span><span class="tree-label">DLL y logs</span><span class="tree-note">dependencias o registros según revisión</span></div>
+</div>
+<div class="tree-group">
+<div class="tree-row level-1 critical"><span class="tree-icon">📁</span><span class="tree-label">Database/</span><span class="tree-note">esquema inicial</span></div>
+<div class="tree-row level-2 tree-file critical"><span class="tree-icon">🗃</span><span class="tree-label">database.sql</span><span class="tree-note">importar una sola vez en la base nueva</span></div>
+<div class="tree-row level-2 generated"><span class="tree-icon">🛢</span><span class="tree-label">Base MariaDB: minifighter</span><span class="tree-note">se almacena en el servicio, no aquí</span></div>
+</div>
+<div class="tree-group">
+<div class="tree-row level-1 critical"><span class="tree-icon">📁</span><span class="tree-label">Client/</span><span class="tree-note">cliente clásico y launcher</span></div>
+<div class="tree-row level-2 tree-file critical"><span class="tree-icon">▶</span><span class="tree-label">MFStart.exe</span><span class="tree-note">launcher recomendado por el repack</span></div>
+<div class="tree-row level-2 tree-file critical"><span class="tree-icon">⚙</span><span class="tree-label">MFStart.ini</span><span class="tree-note">ServerIP=127.0.0.1</span></div>
+<div class="tree-row level-2 tree-file"><span class="tree-icon">🎮</span><span class="tree-label">KartNew.exe</span><span class="tree-note">ejecutable del cliente clásico</span></div>
+<div class="tree-row level-2 critical"><span class="tree-icon">📁</span><span class="tree-label">data/</span><span class="tree-note">textos, gráficos, sonidos y datos</span></div>
+<div class="tree-row level-2 optional"><span class="tree-icon">📄</span><span class="tree-label">wrappers / DLL gráficas</span><span class="tree-note">solo las incluidas y documentadas</span></div>
+</div>
+</div>
+<div class="file-guide">
+<article class="file-guide-card"><h4>Edita únicamente estos INI</h4><p>Empieza por <code>Server_MF/config.ini</code> y <code>Client/MFStart.ini</code>. No edites <code>KartNew.exe</code> con hexadecimal si el launcher reciente ya permite definir la IP.</p></article>
+<article class="file-guide-card"><h4>El SQL no se ejecuta cada vez</h4><p><code>database.sql</code> inicializa la base. Después trabajas con las tablas ya importadas; reimportarlo sobre una base usada puede duplicar o destruir información.</p></article>
+<article class="file-guide-card"><h4>Binario y fuente no son equivalentes</h4><p>Aunque exista <code>source/</code>, no presupongas que <code>Server.exe</code> fue compilado exactamente desde esa revisión. Analiza y registra hashes.</p></article>
+<article class="file-guide-card"><h4>Respaldos necesarios</h4><p>Guarda copia de los INI funcionales, exporta la base MariaDB y conserva una instantánea de la VM antes de modificar tablas o DLL.</p></article>
+</div>
+<div class="file-flow"><div class="flow-node">Servicio MariaDB</div><div class="flow-arrow">→</div><div class="flow-node"><code>Server.exe</code></div><div class="flow-arrow">→</div><div class="flow-node"><code>MFStart.exe</code></div><div class="flow-arrow">→</div><div class="flow-node">Cliente / login local</div></div>
+</div>
+<div class="tab-pane" data-pane="issues">
+<div class="pane-intro orange"><strong>Diagnóstico por capas</strong><p>Comprueba primero la VM, después MariaDB, luego la importación SQL, el servidor y finalmente el cliente. No desactives antivirus ni firewall para “probar”; identifica el archivo o puerto exacto.</p></div>
+<div class="issues">
+<details open=""><summary>No puedo activar Windows Sandbox o crear la máquina virtual</summary><p>Comprueba que la virtualización esté habilitada en BIOS/UEFI y en el Administrador de tareas. Windows Sandbox no está disponible en todas las ediciones; VirtualBox es una alternativa.</p><div class="code">systeminfo | findstr /i "Virtualization Hyper-V"<button class="copy">COPIAR</button></div><div class="issue-tools"><span class="issue-tag check">BIOS/UEFI</span><span class="issue-tag risk">Edición de Windows</span></div></details>
+<details><summary>El comando mariadb no existe o el servicio está detenido</summary><p>Abre una terminal nueva después de instalar MariaDB. Comprueba el servicio; el nombre exacto puede incluir la versión.</p><div class="code">Get-Service *MariaDB*
+mariadb --version<button class="copy">COPIAR</button></div><div class="issue-tools"><span class="issue-tag check">Servicio</span><span class="issue-tag fix">Reabrir terminal</span></div></details>
+<details><summary>Access denied al entrar o Server.exe no autentica en SQL</summary><p>Prueba las credenciales fuera del juego. El usuario creado para <code>127.0.0.1</code> puede ser distinto de uno creado para <code>localhost</code>. Usa en <code>config.ini</code> el mismo host definido al crear el usuario.</p><div class="code">mariadb -h 127.0.0.1 -u mf_local -p minifighter<button class="copy">COPIAR</button></div><div class="issue-tools"><span class="issue-tag check">Host exacto</span><span class="issue-tag check">Usuario y clave</span></div></details>
+<details><summary>database.sql falla durante la importación</summary><p>Trabaja sobre una base vacía y copia el primer error exacto. Revisa versión, collation, claves duplicadas y sentencias incompatibles antes de editar masivamente el SQL.</p><div class="code">SHOW DATABASES;
+USE minifighter;
+SHOW TABLES;
+SHOW WARNINGS;<button class="copy">COPIAR</button></div><div class="issue-tools"><span class="issue-tag risk">No ignorar errores</span><span class="issue-tag fix">Base nueva</span></div></details>
+<details><summary>La base importa pero faltan tablas o registros iniciales</summary><p>Compara el número de tablas con lo esperado por el servidor y revisa el final del log de importación. Para los índices de objetos y cartas, ejecuta primero <code>SELECT</code> y añade el valor 0 solo si corresponde.</p><div class="code">USE minifighter;
+SHOW TABLES;
+SELECT * FROM iteminfoindex;
+SELECT * FROM carddataindex;<button class="copy">COPIAR</button></div><div class="issue-tools"><span class="issue-tag check">Tablas</span><span class="issue-tag risk">Evitar duplicados</span></div></details>
+<details><summary>Server.exe se cierra inmediatamente</summary><p>Ábrelo desde PowerShell dentro de <code>Server_MF</code> para conservar el mensaje. Las causas frecuentes son INI mal formado, DLL faltante, credenciales inválidas o tablas ausentes.</p><div class="code">cd C:\MiniFighterLab\MiniFighterS3\Server_MF
+.\Server.exe<button class="copy">COPIAR</button></div><div class="issue-tools"><span class="issue-tag check">Leer consola</span><span class="issue-tag risk">DLL faltante</span></div></details>
+<details><summary>El servidor inicia, pero el cliente no conecta</summary><p>Confirma que ambos INI apunten a <code>127.0.0.1</code> y que el servidor permanezca abierto. Revisa el puerto configurado sin exponerlo al router.</p><div class="code">Select-String -Path .\Server_MF\config.ini -Pattern "127.0.0.1|port"
+Select-String -Path .\Client\MFStart.ini -Pattern "127.0.0.1|port"
+netstat -ano | findstr LISTENING<button class="copy">COPIAR</button></div><div class="issue-tools"><span class="issue-tag check">IP y puerto</span><span class="issue-tag risk">No abrir router</span></div></details>
+<details><summary>MFStart abre, pero aparece pantalla negra, cursor defectuoso o bajo rendimiento</summary><p>Prueba con una sola pantalla, escala de Windows al 100 % y el controlador gráfico de la VM actualizado. Usa únicamente wrappers incluidos y explicados por el autor del repack.</p><ul><li>No descargues <code>d3d9.dll</code> u otras DLL desde sitios aleatorios.</li><li>No combines varios wrappers al mismo tiempo.</li><li>Registra qué cambio produce una mejora o un fallo.</li></ul><div class="issue-tools"><span class="issue-tag risk">Compatibilidad antigua</span></div></details>
+<details><summary>Defender o VirusTotal detectan un archivo</summary><p>No lo ejecutes automáticamente ni agregues toda la carpeta a exclusiones. Guarda el hash, revisa cuántos motores lo detectan y compáralo con información del autor o de otros usuarios. Ante duda, conserva la VM aislada o abandona esa revisión.</p><div class="code">Get-FileHash .\Server_MF\Server.exe -Algorithm SHA256
+Get-FileHash .\Client\MFStart.exe -Algorithm SHA256<button class="copy">COPIAR</button></div><div class="issue-tools"><span class="issue-tag risk">No excluir carpeta</span><span class="issue-tag check">Comparar hash</span></div></details>
+<details><summary>La cuenta local no inicia sesión o falla al crear cartas</summary><p>Verifica primero que el servidor consulte la base correcta y que las tablas estén completas. Consulta el post del repack para la cuenta de prueba y aplica la corrección de índices únicamente después de revisar su contenido.</p><div class="issue-tools"><span class="issue-tag check">Base correcta</span><span class="issue-tag risk">Índices SQL</span></div></details>
+</div>
+<div class="warning"><strong>No uses “soluciones rápidas” peligrosas:</strong> no desactives Defender, no ejecutes todo como administrador y no reemplaces DLL o INI completos sin conservar una copia funcional.</div>
+</div>
+<div class="tab-pane" data-pane="notes">
+<div class="pane-intro orange"><strong>Reglas de laboratorio para Season 3</strong><p>Esta ruta reproduce una arquitectura antigua con binarios de terceros y una base persistente. La seguridad y la capacidad de volver atrás son parte del procedimiento, no pasos opcionales.</p></div>
+<div class="notes-grid">
+<article class="note-card orange"><h4>Instantáneas por etapa</h4><p>Crea una al instalar Windows, otra después de MariaDB y una tercera cuando el login funcione. Nómbralas con fecha y estado.</p></article>
+<article class="note-card orange"><h4>Red mínima</h4><p>Durante la ejecución usa red desconectada o NAT y <code>127.0.0.1</code>. No configures port forwarding ni una IP pública.</p></article>
+<article class="note-card orange"><h4>Credenciales desechables</h4><p>La contraseña de MariaDB y la cuenta del juego deben existir solo dentro de la VM. No reutilices correos, usuarios o claves personales.</p></article>
+<article class="note-card orange"><h4>Arranque y cierre ordenados</h4><p>Arranque: MariaDB → servidor → launcher. Cierre: cliente → servidor → MariaDB o apagado de la VM. Evita interrumpir una escritura SQL.</p></article>
+<article class="note-card orange"><h4>Un cambio por prueba</h4><p>Registra valores originales y nuevos de cada INI. Antes de tocar tablas, exporta la base o clona la instantánea.</p></article>
+<article class="note-card orange"><h4>Fuente ≠ binario</h4><p>La carpeta de código permite estudiar la lógica, pero no demuestra que todos los EXE y DLL incluidos se hayan compilado desde ella.</p></article>
+</div>
+<div class="note-checklist">
+<div class="note-check"><b>✓</b><span>Guardar hashes SHA-256 del ZIP, <code>Server.exe</code>, <code>MFStart.exe</code> y DLL relevantes.</span></div>
+<div class="note-check"><b>✓</b><span>Respaldar <code>config.ini</code>, <code>MFStart.ini</code> y exportar la base funcional.</span></div>
+<div class="note-check"><b>✓</b><span>Mantener la VM aislada y sin carpetas compartidas con información personal.</span></div>
+<div class="note-check"><b>✓</b><span>No monetizar, redistribuir ni publicar el cliente o recursos sin autorización.</span></div>
+</div>
+<table class="source-priority"><thead><tr><th>Prioridad</th><th>Fuente de verdad</th><th>Uso</th></tr></thead><tbody><tr><td>1</td><td><a href="https://forum.ragezone.com/threads/mini-fighter-season-3-files-db-client-tools.1156160/page-4" rel="noopener" target="_blank">Post del repack en RaGEZONE</a></td><td>Contenido, configuración, launcher y correcciones publicadas.</td></tr><tr><td>2</td><td>INI y SQL incluidos en tu revisión</td><td>Nombres reales de campos, tablas y puertos.</td></tr><tr><td>3</td><td>Documentación oficial de MariaDB y la VM</td><td>Instalación, usuarios, importación y aislamiento.</td></tr><tr><td>4</td><td>Comentarios de otros usuarios</td><td>Compatibilidad y errores que debes reproducir con cautela.</td></tr></tbody></table>
+<div class="warning"><strong>Límite recomendado:</strong> úsalo como laboratorio local. Publicarlo en internet añade riesgos de seguridad, mantenimiento y derechos de autor que esta guía no cubre.</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="wrap">
+<header class="section-head reveal">
+<div><div class="kicker">Selector de estilo</div><h2>¿Qué ruta encaja contigo?</h2></div>
+<p>Marca lo que valoras. El resultado cambia en tiempo real y sirve como orientación, no como una evaluación técnica definitiva.</p>
+</header>
+<div class="decision">
+<div class="quiz panel reveal">
+<h3>Prioridades</h3><p>Selecciona todas las afirmaciones que describen tu objetivo actual.</p>
+<div class="check-list">
+<label class="check-item"><input checked="" data-points="python" type="checkbox"/><span>Quiero aprender Python mientras avanzo.</span></label>
+<label class="check-item"><input checked="" data-points="python" type="checkbox"/><span>Prefiero evitar ejecutables antiguos y una base SQL.</span></label>
+<label class="check-item"><input data-points="emulator" type="checkbox"/><span>Mi prioridad es acercarme al cliente original.</span></label>
+<label class="check-item"><input data-points="emulator" type="checkbox"/><span>Puedo trabajar con C#, MariaDB y máquinas virtuales.</span></label>
+<label class="check-item"><input data-points="python" type="checkbox"/><span>Quiero modificar personajes, físicas o sprites.</span></label>
+</div>
+</div>
+<div class="result-card panel reveal">
+<div class="result-icon" id="resultIcon">⚡</div>
+<div class="kicker">Resultado del combate</div>
+<h3 id="resultTitle">Empieza con Python</h3>
+<p id="resultText">Tu selección favorece una ruta transparente, más fácil de depurar y alineada con el aprendizaje de programación.</p>
+<div class="scorebar"><div class="score-python" id="scorePython"></div><div class="score-emulator" id="scoreEmulator"></div></div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="seguridad">
+<div class="wrap">
+<header class="section-head reveal">
+<div><div class="kicker">Defensa perfecta</div><h2>Seguridad y límites</h2></div>
+<p>Un servidor privado local puede ser un ejercicio técnico legítimo, pero los paquetes comunitarios antiguos requieren precaución y respeto por derechos de autor.</p>
+</header>
+<div class="safety-grid">
+<article class="safety-card panel reveal"><div class="icon">🛡️</div><h3>Aislamiento</h3><p>Prueba binarios en una máquina virtual, crea una instantánea y limita el acceso de red.</p></article>
+<article class="safety-card panel reveal"><div class="icon">🔍</div><h3>Verificación</h3><p>Analiza ZIP, EXE y DLL con Defender y VirusTotal. Compara hashes cuando la comunidad los publique.</p></article>
+<article class="safety-card panel reveal"><div class="icon">🔒</div><h3>Solo localhost</h3><p>Usa 127.0.0.1, no abras puertos y no reutilices contraseñas personales.</p></article>
+<article class="safety-card panel reveal"><div class="icon">👤</div><h3>Sin administrador</h3><p>No otorgues privilegios elevados salvo que entiendas exactamente por qué son necesarios.</p></article>
+<article class="safety-card panel reveal"><div class="icon">💾</div><h3>Copias</h3><p>Conserva el paquete original sin modificar y trabaja siempre sobre una copia.</p></article>
+<article class="safety-card panel reveal"><div class="icon">⚖️</div><h3>Uso privado</h3><p>No redistribuyas clientes, recursos o código comercial sin autorización. Evita monetizar el proyecto.</p></article>
+</div>
+<div class="warning reveal"><strong>Importante:</strong> esta página no aloja los archivos del juego ni garantiza que los paquetes de terceros sean seguros, completos o legales en tu jurisdicción. Sirve como mapa de investigación y laboratorio educativo.</div>
+</div>
+</section>
+<section class="section" id="fuentes">
+<div class="wrap">
+<header class="section-head reveal">
+<div><div class="kicker">Archivo de misión</div><h2>Fuentes verificadas</h2></div>
+<p>Los enlaces llevan a las publicaciones originales o a referencias visuales empleadas para reconstruir la identidad de interfaz.</p>
+</header>
+<div class="sources">
+<a class="source reveal" href="https://forum.ragezone.com/threads/mini-fighter-season-3-files-db-client-tools.1156160/page-3" rel="noopener" target="_blank"><small>RaGEZONE · 2018–2026</small><strong>Mini Fighter Season 3 Files DB Client Tools — página 3</strong><span>Hilo del emulador y publicación inicial del remake en Python.</span></a>
+<a class="source reveal" href="https://forum.ragezone.com/threads/mini-fighter-season-3-files-db-client-tools.1156160/page-4" rel="noopener" target="_blank"><small>RaGEZONE · 2026</small><strong>Repack actualizado, MFStart y AllInOneMFOToolbox</strong><span>Configuración documentada, MariaDB/MySQL y herramientas de recursos.</span></a>
+<a class="source reveal" href="https://gamezone.live/board_MsnU09/13371520" rel="noopener" target="_blank"><small>GameZone · Corea</small><strong>Mini Fighter Season 2 pack + video</strong><span>Referencia adicional de un paquete coreano publicado en 2023.</span></a>
+<a class="source reveal" href="https://gnn.gamer.com.tw/detail.php?sn=48485" rel="noopener" target="_blank"><small>Bahamut GNN · Taiwán</small><strong>Anuncio y capturas de 迷你格鬥 Online</strong><span>Referencia visual del estilo Q, colores intensos y HUD metálico.</span></a>
+<a class="source reveal" href="https://gnn.gamer.com.tw/detail.php?sn=67820" rel="noopener" target="_blank"><small>Bahamut GNN · Taiwán</small><strong>Actualización de nivel 100</strong><span>Referencia del skill bar azul, barras HP/MP y menús inferiores.</span></a>
+<a class="source reveal" href="https://gnn.gamer.com.tw/detail.php?sn=48850" rel="noopener" target="_blank"><small>Bahamut GNN · Taiwán</small><strong>Identidad oficial de 迷你格鬥 Online</strong><span>Referencia de pantallas versus, retratos y división rojo/azul.</span></a>
+<a class="source reveal" href="https://www.ggemguide.com/m_news_view.htm?uid=11208" rel="noopener" target="_blank"><small>GGGame · Corea · 2007</small><strong>Inicio del servicio abierto de 미니파이터</strong><span>Referencia histórica para la etapa inicial coreana.</span></a>
+<a class="source reveal" href="https://www.inven.co.kr/webzine/news/?news=29090" rel="noopener" target="_blank"><small>Inven · Corea · 2010</small><strong>Actualización de Saryunbi despertado</strong><span>Ejemplo documentado del sistema de despertar y transformación visual.</span></a>
+<a class="source reveal" href="https://www.gamemeca.com/view.php?gid=104086" rel="noopener" target="_blank"><small>GameMeca · Corea · 2012</small><strong>Furious Tien y receta de combinación</strong><span>Descripción de furia, acumulación de daño y materiales.</span></a>
+<a class="source reveal" href="https://kn.gamme.com.tw/201103308513.html" rel="noopener" target="_blank"><small>Gamme · Taiwán · 2011</small><strong>Batalla de apuestas y fortalecimiento</strong><span>Referencia para modos regionales, cartas y nuevos personajes.</span></a>
+<a class="source reveal" href="https://forum.gamer.com.tw/Co.php?bsn=12038&sn=55997" rel="noopener" target="_blank"><small>Bahamut Forum · Comunidad</small><strong>Etapas y estrellas de las cartas</strong><span>Fuente comunitaria útil, claramente separada de anuncios oficiales.</span></a>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap footer-grid">
+<div><strong>MINI FIGHTER // LOCAL LAB</strong><div class="tiny">Archivo comunitario no oficial · historia, sistemas, preservación e instalación · julio de 2026</div></div>
+<div class="tiny">Diseño original creado para esta guía. No afiliado a los titulares del juego.</div>
+</div>
+</footer>
+<div class="toast" id="toast">Comando copiado</div>
+<script src="assets/js/app.js?v=1.0.0" defer></script>
+</body>
+</html>
