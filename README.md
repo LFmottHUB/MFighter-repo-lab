@@ -15,21 +15,6 @@ mini-fighter-local-lab-optimized/
         └── app.js
 ```
 
-## Publicación en GitHub Pages
-
-Sube **todo el contenido de esta carpeta**, conservando la estructura. No subas únicamente `index.html`, porque este ahora depende de `assets/css/styles.css` y `assets/js/app.js`.
-
-## Prueba local
-
-Puedes abrir `index.html` directamente. Para reproducir mejor el funcionamiento de GitHub Pages:
-
-```powershell
-cd mini-fighter-local-lab-optimized
-python -m http.server 8000
-```
-
-Después visita `http://localhost:8000`.
-
 ## Optimización aplicada
 
 - CSS y JavaScript separados para permitir caché independiente.
